@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+<h1>Register</h1>
+
+<form  method="post">
+    
+    <div class="user-box">
+
+       <input name="UserName" type="text" required="">
+        <label name="UserName">Name</label>
+        
+        
+    </div>
+    <div class="user-box">
+        <input name="UserLastName"  type="text" required="">
+        <label name="UserLastName" >LastName</label>
+        
+        
+    </div>
+    <div class="user-box">
+        <input name="UserPassword" type="password" required="">
+        <label name="UserPassword" >Password</label>
+        
+        
+    </div>
+    <div class="user-box">
+        <input  name="UserEmail" type="text" required="">
+        <label name="UserEmail">Email</label>
+       
+        
+    </div>
+    <div class="user-box">
+        <button type="submit" class="Submit" >Create</button>
+    </div>
+    
+</form>
+
