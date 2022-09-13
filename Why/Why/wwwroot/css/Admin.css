@@ -85,7 +85,7 @@ html, body {
     width: 100%;
 }
 
-    #responsive-admin-menu #menu a {
+    #responsive-admin-menu #menu .box {
         border-bottom: 1px dotted #52535a;
         font-size: 14px;
         text-decoration: none;
@@ -97,7 +97,7 @@ html, body {
         overflow: hidden;
     }
 
-        #responsive-admin-menu #menu a:hover {
+        #responsive-admin-menu #menu .box:hover {
             color: #52535a;
             background-color: #fcfcfc;
         }
@@ -114,31 +114,55 @@ html, body {
         overflow: hidden;
     }
 
-        #responsive-admin-menu #menu div a {
+        #responsive-admin-menu #menu div .box {
             color: #c0c0c0;
         }
 
-            #responsive-admin-menu #menu div a:hover {
+            #responsive-admin-menu #menu div .box:hover {
                 color: #888888;
             }
 
-    #responsive-admin-menu #menu a.submenu:before {
+    #responsive-admin-menu #menu .box.submenu:before {
         font-family: FontAwesome;
         content: "\f054";
     }
 
-    #responsive-admin-menu #menu a.downarrow:before {
+    #responsive-admin-menu #menu .box.downarrow:before {
         font-family: FontAwesome;
         content: "\f078";
     }
 
-    #responsive-admin-menu #menu a.submenu:before {
+    #responsive-admin-menu #menu .box.submenu:before {
         font-size: 14px;
         position: absolute;
         right: 15px;
         top: 17px;
     }
 /* Menu Styles */
+.user-box {
+    position: relative;
+}
+
+    
+
+    .user-box label {
+        position: absolute;
+        top: -5px;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        
+        pointer-events: none;
+        transition: .5s;
+    }
+
+    .user-box .Inp:focus ~ label,
+    .user-box .Inp:valid ~ label {
+        top: -25px;
+        left: 0;
+        color: #03e9f4;
+        font-size: 12px;
+    }
 
 
 
@@ -147,13 +171,13 @@ html, body {
         display: none;
     }
 
-    #responsive-admin-menu #menu a span {
+    #responsive-admin-menu #menu .box span {
         display: inline-block;
     }
 }
 
 @media screen and (max-width: 800px) {
-    #responsive-admin-menu #menu a span {
+    #responsive-admin-menu #menu .box span {
         display: none;
     }
 
@@ -171,7 +195,7 @@ html, body {
         margin-left: 40px;
     }
 
-    #responsive-admin-menu #menu a.submenu:before {
+    #responsive-admin-menu #menu .box.submenu:before {
         font-size: 6px;
         right: 5px;
     }
@@ -200,7 +224,7 @@ html, body {
             display: none;
         }
 
-        #responsive-admin-menu #menu a span {
+        #responsive-admin-menu #menu .box span {
             display: inline-block;
         }
 
@@ -217,11 +241,11 @@ html, body {
         display: none;
     }
 
-        #responsive-admin-menu #menu a {
+        #responsive-admin-menu #menu .box {
             color: #FFFFFF;
         }
 
-            #responsive-admin-menu #menu a.submenu:before {
+            #responsive-admin-menu #menu .box.submenu:before {
                 font-size: 14px;
                 right: 15px;
             }
@@ -278,7 +302,7 @@ html, body {
     margin-top: 0
 }
 
-.icon-white, .nav-pills > .active > a > [class^="icon-"], .nav-pills > .active > a > [class*=" icon-"], .nav-list > .active > a > [class^="icon-"], .nav-list > .active > a > [class*=" icon-"], .navbar-inverse .nav > .active > a > [class^="icon-"], .navbar-inverse .nav > .active > a > [class*=" icon-"], .dropdown-menu > li > a:hover > [class^="icon-"], .dropdown-menu > li > a:hover > [class*=" icon-"], .dropdown-menu > .active > a > [class^="icon-"], .dropdown-menu > .active > a > [class*=" icon-"], .dropdown-submenu:hover > a > [class^="icon-"], .dropdown-submenu:hover > a > [class*=" icon-"] {
+.icon-white, .nav-pills > .active > .box > [class^="icon-"], .nav-pills > .active > .box > [class*=" icon-"], .nav-list > .active > .box > [class^="icon-"], .nav-list > .active > .box > [class*=" icon-"], .navbar-inverse .nav > .active > .box > [class^="icon-"], .navbar-inverse .nav > .active > .box > [class*=" icon-"], .dropdown-menu > li > .box:hover > [class^="icon-"], .dropdown-menu > li > .box:hover > [class*=" icon-"], .dropdown-menu > .active > .box > [class^="icon-"], .dropdown-menu > .active > .box > [class*=" icon-"], .dropdown-submenu:hover > .box > [class^="icon-"], .dropdown-submenu:hover > .box > [class*=" icon-"] {
     background-image: none
 }
 
@@ -288,7 +312,7 @@ html, body {
     speak: none
 }
 
-a [class^="icon-"], a [class*=" icon-"] {
+a [class^="icon-"], .box [class*=" icon-"] {
     display: inline-block
 }
 

@@ -17,7 +17,7 @@ namespace Why.Controllers
         ThumbManager tm = new ThumbManager(new ThumbRepository());
         BiographyManager bm = new BiographyManager(new BiographyRepository());
 
-
+        Thumb thumbsId = new Thumb();
 
         [Authorize]
         public IActionResult Index()
@@ -73,11 +73,28 @@ namespace Why.Controllers
 
 
             t.UsersName = User.Identity.Name;
+            
             tm.ThumbAdd(t);
-
+            
             await Task.CompletedTask;
             return RedirectToAction("Biography", "Admin");
         }
+
+        [HttpGet]
+        public IActionResult Thumbdel(int id)
+        {
+            var userClaim = User.Identity.Name;
+            ViewBag.userCount = userClaim;
+            var delThumb = tm.GetbyId(id);
+            var delBio = bm.GetbyId(id);
+            tm.ThumbRemove(delThumb);
+            bm.BiographyRemove(delBio);
+            return RedirectToAction("Index","Admin");
+        }
+
+
+
+
         public IActionResult Biography()
         {
             var userClaim = User.Identity.Name;
@@ -89,11 +106,35 @@ namespace Why.Controllers
         {
             if (b.BiographyContent == null)
             {
+                List<Thumb> thumbsList = new List<Thumb>();
                 b.BiographyContent = "Null";
+                var thumbList = tm.GetList();
+
+                foreach (var item in thumbList)
+                {
+                    if (item.UsersName == User.Identity.Name)
+                    {
+                        thumbsList.Add(item);
+
+                        
+                    }
+                }
+                b.ThumbsId = thumbsList.Last().ThumbId;
                 bm.BiographyAdd(b);
             }
             else
             {
+                List<Thumb> thumbsList = new List<Thumb>();
+                var thumbList = tm.GetList();
+
+                foreach (var item in thumbList)
+                {
+                    if (item.UsersName == User.Identity.Name)
+                    {
+                        thumbsList.Add(item);
+                    }
+                }
+                b.ThumbsId = thumbsList.Last().ThumbId;
                 bm.BiographyAdd(b);
             }
 

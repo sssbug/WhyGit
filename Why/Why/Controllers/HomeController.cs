@@ -39,30 +39,51 @@ namespace Why.Controllers
             var userClaim = User.Identity.Name;
             ViewBag.userCount = userClaim;
 
-
-            var bio = bm.GetbyId(id);
-            if (bio != null)
+            var value = bm.GetList();
+            
+            if (value != null)
             {
-                var model = new Biography()
+                Biography bioId = null;
+                foreach (var item in value)
                 {
-                    BiographyId = bio.BiographyId,
-                    BiographyContent = bio.BiographyContent,
-                    BiographyTitle = bio.BiographyTitle,
-                    BiographyUserName = bio.BiographyUserName,
+                    if (item.ThumbsId == id)
+                    {
+                        bioId = item;
+                    }
+                }
+                var bio = bioId;
+                if (bio != null)
+                {
+                    var model = new Biography()
+                    {
+                        BiographyId = bio.ThumbsId,
+                        BiographyContent = bio.BiographyContent,
+                        BiographyTitle = bio.BiographyTitle,
+                        BiographyUserName = bio.BiographyUserName,
+                        
 
 
-                };
-                return View(model);
+                    };
+                    return View(model);
+                }
+                else
+                {
+                    var model = new Biography()
+                    {
+                        BiographyContent = "NUll"
+                    };
+
+                    return View(model);
+                }
             }
-            else
-            {
+            else {
                 var model = new Biography()
                 {
                     BiographyContent = "NUll"
                 };
-
                 return View(model);
             }
+            
             
             
         }

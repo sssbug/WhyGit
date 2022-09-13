@@ -27,8 +27,12 @@ namespace Why.Repositories
 
         public void RemoveBiography(Biography biography)
         {
-            context.Remove(biography);
-            context.SaveChanges();
+            if (biography != null)
+            {
+                context.Remove(biography);
+                context.SaveChanges();
+            }
+            
         }
 
         public void UpdateBiography(Biography biography)

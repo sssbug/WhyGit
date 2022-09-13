@@ -13,12 +13,17 @@
 
         @foreach (var item in Model)
         {
+            <div class="box">
+                <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.ThumbId">
+                    <div class="box" style="">
+                        <h5>@item.ThumbName</h5>
 
-            <a class="box" asp-controller="Home" asp-action="Detail" asp-route-id="@item.ThumbId">
-                <div class="box" style="">
-                    <h5>@item.ThumbName</h5>
-                </div>
-            </a>
+                    </div>
+
+                </a>
+                <a class="btn btn-primary"  asp-controller="Admin" asp-action="ThumbDel" asp-route-id="@item.ThumbId">Del</a>
+
+            </div>
 
         }
 
