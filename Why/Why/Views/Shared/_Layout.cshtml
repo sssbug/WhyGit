@@ -23,16 +23,28 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
                     <ul class="navbar-nav">
-                        
-                        
-                        @if (ViewBag.userCount != null)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Create</a>
-                            </li>
-                        }
-                        
 
+                         <li class="nav-item">
+                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-name="Suicide">Suicide</a>
+                         </li>
+                        <li class="nav-item">
+                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-name="Natural">Natural</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-name="Accidental">Accidental</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-name="Homicide">Homicide</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-name="Undetermined">Undetermined</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-name="Pending">Pending</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-name="">All</a>
+                         </li>
                     </ul>
                 </div>
                 <div class="justify-content-end">
@@ -41,8 +53,12 @@
                         @if (ViewBag.userCount != null)
                         {
                             <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Create</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-white btn btn-primary" asp-area="" asp-controller="Login" asp-action="Logout">Logout</a>
                             </li>
+
                         }
                         else
                         {

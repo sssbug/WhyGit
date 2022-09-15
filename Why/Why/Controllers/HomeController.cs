@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Security.Claims;
 using Why.AbstractServices;
@@ -19,14 +20,43 @@ namespace Why.Controllers
 
         ThumbManager tm = new ThumbManager(new ThumbRepository());
         BiographyManager bm = new BiographyManager(new BiographyRepository());
-        
+        List<Thumb> thumbList = new List<Thumb>();
+
         [AllowAnonymous]
-        public IActionResult Index()
+        public IActionResult Index(string name)
         {
             var userClaim = User.Identity.Name;
             ViewBag.userCount = userClaim;
-            var values = tm.GetList();
-            return View(values);
+            if (name == null)
+            {
+                var values = tm.GetList();
+                return View(values);
+            }
+            else
+            {
+                var values = tm.GetList();
+                foreach (var item in values)
+                {
+                    if (item.ThumbTag == name)
+                    {
+                        thumbList.Add(item);
+                    }
+                    
+
+                }
+                if (thumbList == null)
+                {
+                    return View();
+                }
+                else
+                {
+                    return View(thumbList);
+
+                }
+
+            }
+            
+            
         }
         [AllowAnonymous]
         public IActionResult Privacy()
@@ -87,6 +117,12 @@ namespace Why.Controllers
             
             
         }
+
+
+
+
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

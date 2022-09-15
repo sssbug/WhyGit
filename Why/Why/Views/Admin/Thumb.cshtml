@@ -13,9 +13,53 @@
 
         <input class="Inp" type="text" name="ThumbName" required="">
         <label>Name</label>
-    </div>
-    
 
+    </div>
+    <div class="user-box">
+
+        <input class="Inp" type="text" name="ThumbLastName" required="">
+        <label>LastName</label>
+
+    </div>
+    <div class="">
+        <h4>Reason</h4>
+        <ul>
+            
+            <li>
+                <label>Suicide</label>
+                <input  type="radio" name="ThumbTag" value="Suicide" required="">
+            </li>
+            <li>
+                <label>Natural Deaths</label>
+                <input  type="radio" name="ThumbTag" value="Natural" required="">
+            </li>
+            <li>
+                <label>Accidental Deaths</label>
+                <input  type="radio" name="ThumbTag" value="Accidental" required="">
+            </li>
+            <li>
+                <label>Homicide</label>
+                <input  type="radio" name="ThumbTag" value="Homicide" required="">
+            </li>
+            <li>
+                <label>Undetermined</label>
+                <input  type="radio" name="ThumbTag" value="Undetermined" required="">
+            </li>
+            <li>
+                <label>Pending</label>
+                <input  type="radio" name="ThumbTag" value="Pending" required="">
+            </li>
+        </ul>
+        
+        
+
+    </div>
+    <div class="user-box">
+        <h4>Day of death</h4>
+        <input  type="date" name="Date" required="">
+        
+
+    </div>
     <div class="user-box">
         <input class="btn btn-primary" type="submit" value="Next" name="submit">
     </div>

@@ -3,7 +3,9 @@
     ViewData["Title"] = "Register";
     Layout = "~/Views/Shared/_Login.cshtml";
 }
-
+<div class="alert" style="color:crimson" >
+@TempData["AllertMessage"]
+</div>
 <h1>Register</h1>
 
 <form  method="post">

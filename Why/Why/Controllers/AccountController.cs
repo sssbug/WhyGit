@@ -52,6 +52,7 @@ namespace Why.Controllers
                 else
                 {
                     i = 0;
+                    TempData["AllertMessage"] = "That Email is taken. Try another";
                     return View();
                 }
             }

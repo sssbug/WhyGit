@@ -84,7 +84,13 @@ namespace Why.Data.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("ThumbLastName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ThumbName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ThumbTag")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("UserId")

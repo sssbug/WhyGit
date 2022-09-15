@@ -10,6 +10,8 @@ namespace Why.Data.Models
         [Key]
         public int ThumbId { get; set; }
         public string ThumbName { get; set; }
+        public string ThumbLastName { get; set; }
+        public string ThumbTag { get; set; }
         public DateTime Date { get; set; }
         public string UsersName { get; set; }
         public int UserssId { get; set; }

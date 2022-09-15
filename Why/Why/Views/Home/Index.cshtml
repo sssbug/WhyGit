@@ -13,7 +13,9 @@
             
             <a class="box" asp-controller="Home" asp-action="Detail" asp-route-id="@item.ThumbId">
                 <div class="box" style="">
-                    <h5 >@item.ThumbName </h5>
+                    <h5>@item.ThumbName @item.ThumbLastName</h5>
+                    <span>@item.Date.Day:@item.Date.Month:@item.Date.Year</span>
+                    <h6>@item.ThumbTag</h6>
                 </div>
             </a>
 
