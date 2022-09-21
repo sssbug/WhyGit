@@ -16,8 +16,12 @@ namespace Why.Controllers
     {
         ThumbManager tm = new ThumbManager(new ThumbRepository());
         BiographyManager bm = new BiographyManager(new BiographyRepository());
-
+        UserManager um = new UserManager(new UserRepository());
         Thumb thumbsId = new Thumb();
+        
+
+
+
 
         [Authorize]
         public IActionResult Index()
@@ -79,7 +83,6 @@ namespace Why.Controllers
             await Task.CompletedTask;
             return RedirectToAction("Biography", "Admin");
         }
-
         [HttpGet]
         public IActionResult Thumbdel(int id)
         {
@@ -91,10 +94,6 @@ namespace Why.Controllers
             bm.BiographyRemove(delBio);
             return RedirectToAction("Index","Admin");
         }
-
-
-
-
         public IActionResult Biography()
         {
             var userClaim = User.Identity.Name;
@@ -138,10 +137,46 @@ namespace Why.Controllers
                 bm.BiographyAdd(b);
             }
 
-
-
             await Task.CompletedTask;
             return RedirectToAction("Index", "Admin");
         }
+
+
+
+
+        
+        
+        [AllowAnonymous]
+        public IActionResult Info(int id)
+        {
+            var userValue = um.GetList();
+
+            var thumbid = tm.GetbyId(id);
+
+
+
+            foreach (var item in userValue)
+            {
+                if (item.UserEmail == thumbid.UsersName)
+                {
+                    ViewBag.userName = item.UserName;
+                    ViewBag.userLast = item.UserLastName;
+                    ViewBag.userMail = item.UserEmail;
+                }
+            }
+            return View();
+        }
+
+
+        public IActionResult Chat(int id)
+        {
+            
+            return View();
+        }
+
+
+
+
+
     }
 }

@@ -20,6 +20,7 @@ namespace Why.Controllers
 
         ThumbManager tm = new ThumbManager(new ThumbRepository());
         BiographyManager bm = new BiographyManager(new BiographyRepository());
+        UserManager um = new UserManager(new UserRepository());
         List<Thumb> thumbList = new List<Thumb>();
 
         [AllowAnonymous]
@@ -69,6 +70,23 @@ namespace Why.Controllers
             var userClaim = User.Identity.Name;
             ViewBag.userCount = userClaim;
 
+            var userValue = um.GetList();
+            var userid = um.GetbyId(id);
+            var thumbid = tm.GetbyId(id);
+
+            ViewBag.thumbId = thumbid.ThumbId;
+
+            foreach (var item in userValue)
+            {
+                if (item.UserEmail == thumbid.UsersName)
+                {
+                    ViewBag.userName = item.UserName;
+                }
+            }
+
+
+
+
             var value = bm.GetList();
             
             if (value != null)
@@ -113,7 +131,7 @@ namespace Why.Controllers
                 };
                 return View(model);
             }
-            
+
             
             
         }

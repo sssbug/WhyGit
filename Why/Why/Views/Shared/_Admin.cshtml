@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Why</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    
+
     <link rel="stylesheet" href="~/Why_Did_S.I.H._Die.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Admin.css" asp-append-version="true" />
 </head>
@@ -20,8 +20,6 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center">
                     <ul class="navbar-nav">
-                        
-
                     </ul>
                 </div>
                 <div class="justify-content-end">
@@ -55,8 +53,12 @@
 
             <!--Menu-->
             <div id="menu">
-                <a title="Biography" asp-controller="Admin" asp-action="Create" asp-route-id=""><span> Create </span></a>
-                
+
+                @if (ViewBag.userCount != null)
+                {
+                    <a title="Biography" asp-controller="Admin" asp-action="Create" asp-route-id=""><span> Create </span></a>
+
+                }
 
 
             </div>
@@ -68,7 +70,7 @@
             @RenderBody()
         </div>
 
-        
+
     </main>
 
 

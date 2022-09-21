@@ -304,3 +304,4 @@ D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Why.csproj.CopyComplete
 D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Why.dll
 D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Why.pdb
 D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Why.genruntimeconfig.cache
+D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Info.cshtml.g.cs

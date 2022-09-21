@@ -18,6 +18,6 @@ namespace Why.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Thumb> Thumbs { get; set; }
         public DbSet<Biography> Biographies { get; set; }
-        
+        public DbSet<Chat> Chats { get; set; }
     }
 }

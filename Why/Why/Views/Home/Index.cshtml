@@ -2,24 +2,32 @@
 @model List<Thumb>
 @{
     ViewData["Title"] = "Home Page";
-    
+
 }
+<div class="container">
 
-<div class="grid-base">
+    <main role="main" class="pb-3">
 
-    <div class="grid-container">
-        @foreach (var item in Model)
-        {
-            
-            <a class="box" asp-controller="Home" asp-action="Detail" asp-route-id="@item.ThumbId">
-                <div class="box" style="">
-                    <h5>@item.ThumbName @item.ThumbLastName</h5>
-                    <span>@item.Date.Day:@item.Date.Month:@item.Date.Year</span>
-                    <h6>@item.ThumbTag</h6>
-                </div>
-            </a>
 
-        }
-    </div>
+        <div class="grid-base">
 
+            <div class="grid-container">
+                @foreach (var item in Model)
+                {
+
+                    <a class="box" asp-controller="Home" asp-action="Detail" asp-route-id="@item.ThumbId">
+                        <div class="box" style="">
+                            <h5>@item.ThumbName @item.ThumbLastName</h5>
+                            <span>@item.Date.Day:@item.Date.Month:@item.Date.Year</span>
+                            <h6>@item.ThumbTag</h6>
+
+
+                        </div>
+                    </a>
+
+                }
+            </div>
+
+        </div>
+    </main>
 </div>
