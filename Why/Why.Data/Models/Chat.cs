@@ -5,16 +5,15 @@ using System.Text;
 
 namespace Why.Data.Models
 {
-    public class Biography
+    public class Chat
     {
         [Key]
-        public int BiographyId { get; set; }
-        public string BiographyUserName { get; set; }
-        public string BiographyTitle { get; set; }
-        public string BiographyContent { get; set; }
-        public int UsersId { get; set; }
+        public int ChatId { get; set; }
+        public int ChatFirstUserName { get; set; }
+        public int ChatSecondUserName { get; set; }
+        public string ChatUsersName { get; set; }
+        public string ChatTitle { get; set; }
+        public string ChatContent { get; set; }
         public User User { get; set; }
-        public int ThumbsId { get; set; }
-        public Thumb Thumb { get; set; }
     }
 }
