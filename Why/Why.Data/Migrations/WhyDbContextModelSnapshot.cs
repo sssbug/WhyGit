@@ -71,6 +71,38 @@ namespace Why.Data.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Why.Data.Models.Chat", b =>
+                {
+                    b.Property<int>("ChatId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ChatContent")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ChatFirstUserName")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ChatSecondUserName")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ChatTitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ChatUsersName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ChatId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Chats");
+                });
+
             modelBuilder.Entity("Why.Data.Models.Thumb", b =>
                 {
                     b.Property<int>("ThumbId")
@@ -143,6 +175,13 @@ namespace Why.Data.Migrations
 
                     b.HasOne("Why.Data.Models.User", "User")
                         .WithMany("UserBiography")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("Why.Data.Models.Chat", b =>
+                {
+                    b.HasOne("Why.Data.Models.User", "User")
+                        .WithMany()
                         .HasForeignKey("UserId");
                 });
 
