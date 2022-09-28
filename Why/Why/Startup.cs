@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Why.Data;
+using Why.Signalr.hubs;
 
 namespace Why
 {
@@ -28,7 +29,7 @@ namespace Why
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            services.AddSignalR();
            
 
 
@@ -79,6 +80,7 @@ namespace Why
                     name:"default",
                     pattern:"{controller=Home}/{action=Index}/{id?}"
                     );
+                endpoints.MapHub<ChatHub>("/chathub");
             });
         }
     }

@@ -305,3 +305,6 @@ D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Why.dll
 D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Why.pdb
 D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Why.genruntimeconfig.cache
 D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Info.cshtml.g.cs
+D:\GitHub\WhyGit\Why\Why\bin\Debug\netcoreapp3.1\libman.json
+D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Razor\Views\Chat\Chat.cshtml.g.cs
+D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Chat.cshtml.g.cs
