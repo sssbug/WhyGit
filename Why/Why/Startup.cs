@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Why.Data;
-using Why.Signalr.hubs;
+using Why.Hubs;
 
 namespace Why
 {
@@ -73,6 +73,8 @@ namespace Why
             app.UseRouting();
 
             app.UseAuthorization();
+
+           
 
             app.UseEndpoints(endpoints =>
             {

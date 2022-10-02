@@ -39,10 +39,7 @@ namespace Why.Controllers
 
                     thumbid.Add(item);
                 }
-                else
-                {
-                    //ViewBag.thumbid = ;
-                }
+                
 
             }
 
@@ -149,11 +146,13 @@ namespace Why.Controllers
         [AllowAnonymous]
         public IActionResult Info(int id)
         {
+            var userClaim = User.Identity.Name;
+            ViewBag.userCount = userClaim;
             var userValue = um.GetList();
 
             var thumbid = tm.GetbyId(id);
 
-
+            
 
             foreach (var item in userValue)
             {
@@ -168,11 +167,7 @@ namespace Why.Controllers
         }
 
 
-        public IActionResult Chat(int id)
-        {
-            
-            return View();
-        }
+        
 
 
 
