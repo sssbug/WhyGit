@@ -17,6 +17,7 @@ namespace Why.Controllers
         ThumbManager tm = new ThumbManager(new ThumbRepository());
         BiographyManager bm = new BiographyManager(new BiographyRepository());
         UserManager um = new UserManager(new UserRepository());
+        
         Thumb thumbsId = new Thumb();
         
 
@@ -160,7 +161,8 @@ namespace Why.Controllers
                 {
                     ViewBag.userName = item.UserName;
                     ViewBag.userLast = item.UserLastName;
-                    ViewBag.userMail = item.UserEmail;
+                    string userMail = item.UserEmail;
+                    ViewBag.userMail = userMail;
                 }
             }
             return View();

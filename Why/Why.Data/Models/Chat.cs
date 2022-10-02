@@ -9,8 +9,8 @@ namespace Why.Data.Models
     {
         [Key]
         public int ChatId { get; set; }
-        public int ChatFirstUserName { get; set; }
-        public int ChatSecondUserName { get; set; }
+        public string ChatFirstUserName { get; set; }
+        public string ChatSecondUserName { get; set; }
         public string ChatUsersName { get; set; }
         public string ChatTitle { get; set; }
         public string ChatContent { get; set; }

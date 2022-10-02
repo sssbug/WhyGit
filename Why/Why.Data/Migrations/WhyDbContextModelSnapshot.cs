@@ -81,11 +81,11 @@ namespace Why.Data.Migrations
                     b.Property<string>("ChatContent")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ChatFirstUserName")
-                        .HasColumnType("int");
+                    b.Property<string>("ChatFirstUserName")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ChatSecondUserName")
-                        .HasColumnType("int");
+                    b.Property<string>("ChatSecondUserName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ChatTitle")
                         .HasColumnType("nvarchar(max)");

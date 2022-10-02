@@ -11,6 +11,7 @@
 
 @if (ViewBag.userCount != null)
 {
-    <a class="btn btn-dark"  asp-area="" asp-controller="Chat" asp-action="Chat" asp-route="@ViewBag.userCount @ViewBag.userMail"></a>
+
+    <a class="btn btn-dark"  asp-controller="Chat" asp-action="Index" asp-route-userEmail="@ViewBag.userMail">Chat</a>
 }
 
