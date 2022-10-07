@@ -10,18 +10,26 @@ using Why.Data.Models;
 using Why.ModelsServices;
 using Why.Repositories;
 using Why;
+using Microsoft.JSInterop;
+using Newtonsoft.Json;
 
 namespace Why.Controllers
 {
     public class ChatController : Controller
     {
+        public string emptyValue;
+
+        public string chatUsers;
+        public string chatFistUsers;
+        public string chatSecondUsers;
         ThumbManager tm = new ThumbManager(new ThumbRepository());
         BiographyManager bm = new BiographyManager(new BiographyRepository());
         UserManager um = new UserManager(new UserRepository());
         ChatManager cm = new ChatManager(new ChatRepository());
+        ChatMessageManager cmm = new ChatMessageManager(new ChatMessageRepository());
         Thumb thumbsId = new Thumb();
 
-        
+
         [Authorize]
         public IActionResult Index(string userEmail)
         {
@@ -29,14 +37,14 @@ namespace Why.Controllers
             ViewBag.userCount = userClaim;
             var userMail = um.GetList();
             Chat c = new Chat();
-            
+
             foreach (var item in userMail)
             {
                 if (item.UserEmail == User.Identity.Name)
                 {
                     ViewBag.UserIdentity = item.UserName;
                     c.ChatFirstUserName = item.UserEmail.ToString();
-                    
+                    chatFistUsers = c.ChatFirstUserName;
                 }
             }
             if (userEmail == null)
@@ -46,18 +54,46 @@ namespace Why.Controllers
             else
             {
                 c.ChatSecondUserName = userEmail.ToString();
+                chatSecondUsers = c.ChatSecondUserName;
             }
 
 
             string chatUsersName = c.ChatFirstUserName + c.ChatSecondUserName;
-            c.ChatUsersName = chatUsersName; 
+            c.ChatUsersName = chatUsersName;
 
 
-            cm.ChatAdd(c);
+            WhyDbContext s = new WhyDbContext();
+            var dataValue = s.Chats.FirstOrDefault(x => x.ChatUsersName == c.ChatUsersName);
+            if (dataValue != null)
+            {
+
+                chatUsers = c.ChatUsersName;
 
 
+            }
+            else
+            {
+                cm.ChatAdd(c);
+            }
 
+            
             return View();
         }
+
+        
+        public IActionResult ChatCounter(string msg)
+        {
+            ChatMessage c = new ChatMessage();
+            c.ChatMessageFirstUserName = chatFistUsers;
+            c.ChatMessageSecondUserName = chatSecondUsers;
+            c.ChatMessageUsersName = chatUsers;
+            c.ChatMessageContent = msg;
+            cmm.ChatMessageAdd(c);
+
+            msg = JsonConvert.SerializeObject(msg);
+            return Json(msg);
+        }
+
     }
 }
+

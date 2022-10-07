@@ -5,10 +5,10 @@
 
 <div class="container" style="padding-top:80px">
     <div class="row">
-       
+        
         <div class="col-md-6">
-            <input type="hidden" id="txtUser" value="@ViewBag.UserIdentity" /><br/>
-            <span>Enter Your Message</span><br/>
+            <input type="hidden" id="txtUser" value="@ViewBag.UserIdentity" /><br />
+            <span>Enter Your Message</span><br />
             <textarea rows="10" cols="50" id="txtMessage"></textarea><br />
             <button type="submit" id="btnSend" class="btn btn-info">Send Message</button>
         </div>
@@ -16,7 +16,6 @@
         <div class="col-md-6">
             <h3>Message list</h3>
             <ul id="list" class="alert alert-info">
-
             </ul>
         </div>
 
@@ -24,22 +23,51 @@
 </div>
 
 <script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+
 <script src="/js/signalr/dist/browser/signalr.js"></script>
-<script>
-    var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
-    connection.on("ReceiveMessage", function(fromUser, message) {
-        var msg = fromUser + ": " + message;
-        var li = document.createElement("li");
-        li.textContent = msg;
-        $("#list").prepend(li);
+<script type="text/javascript">
 
-    });
 
-    connection.start();
 
-    $("#btnSend").on("click", function() {
-        var fromUser = $("#txtUser").val();
-        var message = $("#txtMessage").val();
-        connection.invoke("SendMessage", fromUser, message);
-    });
+
+
+
 </script>
+
+@section Scripts{
+    <script>
+        var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+
+        connection.on("ReceiveMessage", function(fromUser, message) {
+            var msg = fromUser + ": " + message;
+            var li = document.createElement("li");
+            li.textContent = msg;
+            $("#list").prepend(li);
+
+        });
+
+        connection.start();
+
+        $("#btnSend").click(x => {
+            var fromUser = $("#txtUser").val();
+            var message = $("#txtMessage").val();
+            connection.invoke("SendMessage", fromUser, message);
+            let mess = $("#txtMessage").val();
+            $.ajax({
+                contentType: "application/json",
+                dataType: "json",
+                type: "get",
+                url: "/Chat/ChatCounter/",
+                data: { msg: mess },
+                success: function(func) {
+                    console.log(func);
+                }
+                
+            });
+            
+
+        });
+
+    </script>
+    }
