@@ -17,11 +17,7 @@ namespace Why.Controllers
 {
     public class ChatController : Controller
     {
-        public string emptyValue;
-
-        public string chatUsers;
-        public string chatFistUsers;
-        public string chatSecondUsers;
+       
         ThumbManager tm = new ThumbManager(new ThumbRepository());
         BiographyManager bm = new BiographyManager(new BiographyRepository());
         UserManager um = new UserManager(new UserRepository());
@@ -44,7 +40,7 @@ namespace Why.Controllers
                 {
                     ViewBag.UserIdentity = item.UserName;
                     c.ChatFirstUserName = item.UserEmail.ToString();
-                    chatFistUsers = c.ChatFirstUserName;
+                    
                 }
             }
             if (userEmail == null)
@@ -54,7 +50,7 @@ namespace Why.Controllers
             else
             {
                 c.ChatSecondUserName = userEmail.ToString();
-                chatSecondUsers = c.ChatSecondUserName;
+                ViewBag.chatSecondUsers = userEmail.ToString();
             }
 
 
@@ -67,7 +63,7 @@ namespace Why.Controllers
             if (dataValue != null)
             {
 
-                chatUsers = c.ChatUsersName;
+                ViewBag.chatUsers = c.ChatUsersName;
 
 
             }
@@ -91,16 +87,16 @@ namespace Why.Controllers
                 }
             }
             
-            return RedirectToRoute(messageList);
+            return null;
         }
 
 
-        public IActionResult ChatCounter(string msg)
+        public IActionResult ChatCounter(string msg,string Users, string first, string second)
         {
             ChatMessage c = new ChatMessage();
-            c.ChatMessageFirstUserName = chatFistUsers;
-            c.ChatMessageSecondUserName = chatSecondUsers;
-            c.ChatMessageUsersName = chatUsers;
+            c.ChatMessageFirstUserName = first;
+            c.ChatMessageSecondUserName = second;
+            c.ChatMessageUsersName = Users;
             c.ChatMessageContent = msg;
             cmm.ChatMessageAdd(c);
 

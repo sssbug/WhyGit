@@ -11,7 +11,7 @@
 @if (ViewBag.userCount != null)
 {
 
-    <a class="btn btn-dark" asp-controller="Chat" asp-action="Index" asp-route-userEmail="@ViewBag.userMail">Chat</a>
+    <a class="btn btn-dark" id="btn" asp-controller="Chat" asp-action="Index" asp-route-userEmail="@ViewBag.userMail">Chat</a>
     <input type="hidden" id="txtOtherUser" value="@ViewBag.userMail" />
     <input type="hidden" id="txtUser" value="@ViewBag.userCount"/>
 }
@@ -21,10 +21,10 @@
 
 
 
-        $("#btnSend").click(x => {
-            var User = $("#txtUser").val();
-            var OtherUser = $("#txtOtherUser").val();
-
+        $("#btn").click(x => {
+            let Userr = $("#txtUser").val();
+            let OtherUser = $("#txtOtherUser").val();
+            let userss = Userr + OtherUser;
             
 
             
@@ -33,7 +33,7 @@
                 dataType: "json",
                 type: "get",
                 url: "/Chat/ChatUserMessage/",
-                data: {user: User, otherUser: , users: },
+                data: {user: Userr, otherUser: OtherUser, users: userss},
                 success: function(func) {
                     console.log(func);
                 }

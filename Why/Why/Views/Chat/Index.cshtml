@@ -7,6 +7,9 @@
     <div class="row">
 
         <div class="col-md-6">
+            
+            <input type="hidden" id="txtOtherUser" value="@ViewBag.chatSecondUsers" />
+            <input type="hidden" id="txtFirstUser" value="@ViewBag.userCount" />
             <input type="hidden" id="txtUser" value="@ViewBag.UserIdentity" /><br />
             <span>Enter Your Message</span><br />
             <textarea rows="10" cols="50" id="txtMessage"></textarea><br />
@@ -50,7 +53,10 @@
 
 
         $("#btnSend").click(x => {
+            var OtherUser = $("#txtOtherUser").val();
+            var FirstUser = $("#txtFirstUser").val();
             var fromUser = $("#txtUser").val();
+            var Userss = FirstUser + OtherUser;
             var message = $("#txtMessage").val();
 
             var msg = fromUser + ": " + message;
@@ -64,7 +70,7 @@
                 dataType: "json",
                 type: "get",
                 url: "/Chat/ChatCounter/",
-                data: { msg: mess },
+                data: { msg: mess,Users: Userss, first: FirstUser, second: OtherUser},
                 success: function(func) {
                     console.log(func);
                 }
