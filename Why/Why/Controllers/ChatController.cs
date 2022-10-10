@@ -79,8 +79,22 @@ namespace Why.Controllers
             
             return View();
         }
+        public IActionResult ChatUserMessage(string user, string otherUser, string users)
+        {
+            List<string> messageList = new List<string>();
+            var usersMessage = cmm.GetList();
+            foreach (var item in usersMessage)
+            {
+                if (users == item.ChatMessageUsersName)
+                {
+                    messageList.Add(item.ChatMessageContent);
+                }
+            }
+            
+            return RedirectToRoute(messageList);
+        }
 
-        
+
         public IActionResult ChatCounter(string msg)
         {
             ChatMessage c = new ChatMessage();

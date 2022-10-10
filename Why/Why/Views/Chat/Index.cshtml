@@ -5,7 +5,7 @@
 
 <div class="container" style="padding-top:80px">
     <div class="row">
-        
+
         <div class="col-md-6">
             <input type="hidden" id="txtUser" value="@ViewBag.UserIdentity" /><br />
             <span>Enter Your Message</span><br />
@@ -37,22 +37,27 @@
 
 @section Scripts{
     <script>
-        var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+        //var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
-        connection.on("ReceiveMessage", function(fromUser, message) {
+        //connection.on("ReceiveMessage", function(fromUser, message) {
+        //    var msg = fromUser + ": " + message;
+        //    var li = document.createElement("li");
+        //    li.textContent = msg;
+        //    $("#list").prepend(li);
+
+        //});
+
+
+
+        $("#btnSend").click(x => {
+            var fromUser = $("#txtUser").val();
+            var message = $("#txtMessage").val();
+
             var msg = fromUser + ": " + message;
             var li = document.createElement("li");
             li.textContent = msg;
             $("#list").prepend(li);
 
-        });
-
-        connection.start();
-
-        $("#btnSend").click(x => {
-            var fromUser = $("#txtUser").val();
-            var message = $("#txtMessage").val();
-            connection.invoke("SendMessage", fromUser, message);
             let mess = $("#txtMessage").val();
             $.ajax({
                 contentType: "application/json",
@@ -63,9 +68,9 @@
                 success: function(func) {
                     console.log(func);
                 }
-                
+
             });
-            
+
 
         });
 

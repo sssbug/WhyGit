@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Info";
     Layout = "~/Views/Shared/_Admin.cshtml";
 }
@@ -12,6 +11,37 @@
 @if (ViewBag.userCount != null)
 {
 
-    <a class="btn btn-dark"  asp-controller="Chat" asp-action="Index" asp-route-userEmail="@ViewBag.userMail">Chat</a>
+    <a class="btn btn-dark" asp-controller="Chat" asp-action="Index" asp-route-userEmail="@ViewBag.userMail">Chat</a>
+    <input type="hidden" id="txtOtherUser" value="@ViewBag.userMail" />
+    <input type="hidden" id="txtUser" value="@ViewBag.userCount"/>
 }
 
+@section Scripts{
+    <script>
+
+
+
+        $("#btnSend").click(x => {
+            var User = $("#txtUser").val();
+            var OtherUser = $("#txtOtherUser").val();
+
+            
+
+            
+            $.ajax({
+                contentType: "application/json",
+                dataType: "json",
+                type: "get",
+                url: "/Chat/ChatUserMessage/",
+                data: {user: User, otherUser: , users: },
+                success: function(func) {
+                    console.log(func);
+                }
+
+            });
+
+
+        });
+
+    </script>
+    }
