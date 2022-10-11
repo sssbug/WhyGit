@@ -87,7 +87,7 @@ namespace Why.Controllers
                 }
             }
             
-            return null;
+            return Json(messageList);
         }
 
 

@@ -21,27 +21,27 @@
 
 
 
-        $("#btn").click(x => {
-            let Userr = $("#txtUser").val();
-            let OtherUser = $("#txtOtherUser").val();
-            let userss = Userr + OtherUser;
+        //$("#btn").click(x => {
+        //    let Userr = $("#txtUser").val();
+        //    let OtherUser = $("#txtOtherUser").val();
+        //    let userss = Userr + OtherUser;
             
 
             
-            $.ajax({
-                contentType: "application/json",
-                dataType: "json",
-                type: "get",
-                url: "/Chat/ChatUserMessage/",
-                data: {user: Userr, otherUser: OtherUser, users: userss},
-                success: function(func) {
-                    console.log(func);
-                }
+        //    $.ajax({
+        //        contentType: "application/json",
+        //        dataType: "json",
+        //        type: "get",
+        //        url: "/Chat/ChatUserMessage/",
+        //        data: {user: Userr, otherUser: OtherUser, users: userss},
+        //        success: function(func) {
+        //            console.log(func);
+        //        }
 
-            });
+        //    });
 
 
-        });
+        //});
 
     </script>
     }
