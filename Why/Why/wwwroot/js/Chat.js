@@ -36,11 +36,12 @@ $("#btn").click(x => {
     var fromUser = $("#txtMainUser").val();
     var fromOtherUser = $("#txtOtherUserName").val();
     var message = $("#txtMessage").val();
-    
-    
 
     
-    
+
+
+
+
     $.ajax({
         contentType: "application/json",
         dataType: "json",
@@ -48,37 +49,41 @@ $("#btn").click(x => {
         url: "/Chat/ChatUserMessage/",
         data: { user: Userr, otherUser: OtherUser, users: userss, otherUsers: OtherUserss },
         success: function (data) {
-            
+
 
             var object = jQuery.parseJSON(data);
-            //fromOtherUserdan isim almam lazim ama gelmiyor oinun yerine email geliyor 
-            $.each(object, (index, value) => {
 
-                console.log(fromOtherUser + " = " + fromUser);
-                if (Userr === value.ChatMessageFirstUserName ) {
-                    var msg = fromUser + ": " + value.ChatMessageContent;
-                    var li = document.createElement("li");
-                    li.textContent = msg;
-                    $("#list").prepend(li);
-                }
-                else {
-                    var msg = fromOtherUser + ": " + value.ChatMessageContent;
-                    var li = document.createElement("li");
-                    li.textContent = msg;
-                    $("#list").prepend(li);
-                }
 
-                
-                
-                
-                
 
-            })
-            
         }
 
     });
-    
-    
+
+
+
 });
+
+
+
+//if (objectValue != null) {
+
+//    $.each(objectValue, (index, value) => {
+
+
+//        if (Userr === value.ChatMessageFirstUserName) {
+//            var msg = fromUser + ": " + value.ChatMessageContent;
+//            var li = document.createElement("li");
+//            li.textContent = msg;
+//            $("#list").prepend(li);
+//        }
+//        else {
+//            var msg = fromOtherUser + ": " + value.ChatMessageContent;
+//            var li = document.createElement("li");
+//            li.textContent = msg;
+//            $("#list").prepend(li);
+//        }
+
+//    })
+//}
+
 
