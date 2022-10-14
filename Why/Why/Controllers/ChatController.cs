@@ -75,19 +75,19 @@ namespace Why.Controllers
             
             return View();
         }
-        public IActionResult ChatUserMessage(string user, string otherUser, string users)
+        public IActionResult ChatUserMessage(string user, string otherUser, string users, string otherUsers)
         {
-            List<string> messageList = new List<string>();
+            List<ChatMessage> messageList = new List<ChatMessage>();
             var usersMessage = cmm.GetList();
             foreach (var item in usersMessage)
             {
-                if (users == item.ChatMessageUsersName)
+                if (users == item.ChatMessageUsersName || otherUsers == item.ChatMessageUsersName)
                 {
-                    messageList.Add(item.ChatMessageContent);
+                    messageList.Add(item);
                 }
             }
-            
-            return Json(messageList);
+            var message = JsonConvert.SerializeObject(messageList);
+            return Json(message);
         }
 
 

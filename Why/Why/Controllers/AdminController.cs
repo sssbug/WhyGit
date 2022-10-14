@@ -152,11 +152,15 @@ namespace Why.Controllers
             var userValue = um.GetList();
 
             var thumbid = tm.GetbyId(id);
-
+            
             
 
             foreach (var item in userValue)
             {
+                if (item.UserEmail == userClaim)
+                {
+                    ViewBag.userMainName = item.UserName;
+                }
                 if (item.UserEmail == thumbid.UsersName)
                 {
                     ViewBag.userName = item.UserName;
