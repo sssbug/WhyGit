@@ -15,15 +15,58 @@
                 @foreach (var item in Model)
                 {
 
-                    <a class="box" asp-controller="Home" asp-action="Detail" asp-route-id="@item.ThumbId">
-                        <div class="box" style="">
-                            <h5>@item.ThumbName @item.ThumbLastName</h5>
-                            <span>@item.Date.Day:@item.Date.Month:@item.Date.Year</span>
-                            <h6>@item.ThumbTag</h6>
-
+                    if (item.ThumbClass == "Bronze")
+                    {
+                        <div class="box">
+                            <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.ThumbId">
+                                <div class="box" style="background-color:sandybrown">
+                                    <h5>@item.ThumbName @item.ThumbLastName</h5>
+                                    <span>@item.Date.Day:@item.Date.Month:@item.Date.Year</span>
+                                    <h6>@item.ThumbTag</h6>
+                                </div>
+                            </a>
 
                         </div>
-                    </a>
+                    }
+                    else if (item.ThumbClass == "Silver")
+                    {
+                        <div class="box">
+                            <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.ThumbId">
+                                <div class="box" style="background-color:silver">
+                                    <h5>@item.ThumbName @item.ThumbLastName</h5>
+                                    <span>@item.Date.Day:@item.Date.Month:@item.Date.Year</span>
+                                    <h6>@item.ThumbTag</h6>
+                                </div>
+                            </a>
+
+                        </div>
+                    }
+                    else if (item.ThumbClass == "Gold")
+                    {
+                        <div class="box">
+                            <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.ThumbId">
+                                <div class="box" style="background-color:goldenrod">
+                                    <h5>@item.ThumbName @item.ThumbLastName</h5>
+                                    <span>@item.Date.Day:@item.Date.Month:@item.Date.Year</span>
+                                    <h6>@item.ThumbTag</h6>
+                                </div>
+                            </a>
+
+                        </div>
+                    }
+                    else if (item.ThumbClass == null)
+                    {
+                        <div class="box">
+                            <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.ThumbId">
+                                <div class="box" style="">
+                                    <h5>@item.ThumbName @item.ThumbLastName</h5>
+                                    <span>@item.Date.Day:@item.Date.Month:@item.Date.Year</span>
+                                    <h6>@item.ThumbTag</h6>
+                                </div>
+                            </a>
+
+                        </div>
+                    }
 
                 }
             </div>

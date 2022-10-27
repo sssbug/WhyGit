@@ -87,8 +87,12 @@ namespace Why.Controllers
                 }
             }
             var message = JsonConvert.SerializeObject(messageList);
+            
             return Json(message);
         }
+
+        
+
 
 
         public IActionResult ChatCounter(string msg,string Users, string first, string second)

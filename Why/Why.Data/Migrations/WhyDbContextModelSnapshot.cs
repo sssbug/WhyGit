@@ -145,6 +145,9 @@ namespace Why.Data.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("ThumbClass")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ThumbLastName")
                         .HasColumnType("nvarchar(max)");
 

@@ -55,7 +55,11 @@
 
                 @if (ViewBag.userCount != null)
                 {
-                    <a title="Biography" asp-controller="Admin" asp-action="Create" asp-route-id=""><span> Create </span></a>
+                    if (ViewBag.create == true)
+                    {
+                       <a title="Biography" asp-controller="Admin" asp-action="Market" asp-route-id=""><span> Create </span></a>
+
+                    }
 
                 }
 

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Why_Did_S.I.H._Die.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/Detail.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/prem.css" asp-append-version="true" />
+
 </head>
 <body>
     <header>
@@ -52,9 +54,9 @@
 
                         @if (ViewBag.userCount != null)
                         {
-                            
+
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Create</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white btn btn-primary" asp-area="" asp-controller="Login" asp-action="Logout">Logout</a>

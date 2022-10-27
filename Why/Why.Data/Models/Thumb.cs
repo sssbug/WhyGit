@@ -12,6 +12,7 @@ namespace Why.Data.Models
         public string ThumbName { get; set; }
         public string ThumbLastName { get; set; }
         public string ThumbTag { get; set; }
+        public string ThumbClass { get; set; }
         public DateTime Date { get; set; }
         public string UsersName { get; set; }
         public int UserssId { get; set; }

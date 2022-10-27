@@ -17,9 +17,9 @@ namespace Why.Controllers
         ThumbManager tm = new ThumbManager(new ThumbRepository());
         BiographyManager bm = new BiographyManager(new BiographyRepository());
         UserManager um = new UserManager(new UserRepository());
-        
+
         Thumb thumbsId = new Thumb();
-        
+
 
 
 
@@ -40,7 +40,7 @@ namespace Why.Controllers
 
                     thumbid.Add(item);
                 }
-                
+
 
             }
 
@@ -61,23 +61,38 @@ namespace Why.Controllers
             return RedirectToAction("Thumb", "Admin");
         }
         [HttpGet]
-        public IActionResult Thumb()
+        public IActionResult Thumb(string name)
         {
             var userClaim = User.Identity.Name;
             ViewBag.userCount = userClaim;
 
-
+            if (name == "Bronze")
+            {
+                ViewBag.thumbClassName = name;
+            }
+            else if (name == "Silver")
+            {
+                ViewBag.thumbClassName = name;
+            }
+            else if (name == "Gold")
+            {
+                ViewBag.thumbClassName = name;
+            }
+            
             return View();
         }
+
+
+
         [HttpPost]
         public async Task<IActionResult> Thumb(Thumb t)
         {
 
-
+            
             t.UsersName = User.Identity.Name;
-            
+
             tm.ThumbAdd(t);
-            
+
             await Task.CompletedTask;
             return RedirectToAction("Biography", "Admin");
         }
@@ -90,8 +105,21 @@ namespace Why.Controllers
             var delBio = bm.GetbyId(id);
             tm.ThumbRemove(delThumb);
             bm.BiographyRemove(delBio);
-            return RedirectToAction("Index","Admin");
+            return RedirectToAction("Index", "Admin");
         }
+        [HttpGet]
+        //public IActionResult ThumbEdit(int id)
+        //{
+        //    var userClaim = User.Identity.Name;
+        //    ViewBag.userCount = userClaim;
+        //    var delThumb = tm.GetbyId(id);
+
+
+
+
+        //    return View();
+        //}
+
         public IActionResult Biography()
         {
             var userClaim = User.Identity.Name;
@@ -113,7 +141,7 @@ namespace Why.Controllers
                     {
                         thumbsList.Add(item);
 
-                        
+
                     }
                 }
                 b.ThumbsId = thumbsList.Last().ThumbId;
@@ -142,8 +170,8 @@ namespace Why.Controllers
 
 
 
-        
-        
+
+
         [AllowAnonymous]
         public IActionResult Info(int id)
         {
@@ -152,8 +180,8 @@ namespace Why.Controllers
             var userValue = um.GetList();
 
             var thumbid = tm.GetbyId(id);
-            
-            
+
+
 
             foreach (var item in userValue)
             {
@@ -173,10 +201,13 @@ namespace Why.Controllers
         }
 
 
-        
+        [HttpGet]
+        public IActionResult Market()
+        {
+            return View();
+        }
 
-
-
+      
 
 
     }

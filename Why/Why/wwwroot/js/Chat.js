@@ -43,7 +43,7 @@ $("#btn").click(x => {
         contentType: "application/json",
         dataType: "json",
         type: "get",
-        url: "/Chat/ChatUserMessage/",
+        url: "/Chat/Index/",
         data: { user: Userr, otherUser: OtherUser, users: userss, otherUsers: OtherUserss },
         success: function (data) {
 
