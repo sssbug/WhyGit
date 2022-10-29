@@ -311,3 +311,5 @@ D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Razor\Views\Chat\Index.cshtml.g
 D:\GitHub\WhyGit\Why\Why\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 D:\GitHub\WhyGit\Why\Why\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
 D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Market.cshtml.g.cs
+D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Razor\Views\Admin\ThumbEdit.cshtml.g.cs
+D:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Razor\Views\Admin\BiographyEdit.cshtml.g.cs

@@ -78,7 +78,7 @@ namespace Why.Controllers
             {
                 ViewBag.thumbClassName = name;
             }
-            
+
             return View();
         }
 
@@ -88,7 +88,7 @@ namespace Why.Controllers
         public async Task<IActionResult> Thumb(Thumb t)
         {
 
-            
+
             t.UsersName = User.Identity.Name;
 
             tm.ThumbAdd(t);
@@ -108,17 +108,71 @@ namespace Why.Controllers
             return RedirectToAction("Index", "Admin");
         }
         [HttpGet]
-        //public IActionResult ThumbEdit(int id)
-        //{
-        //    var userClaim = User.Identity.Name;
-        //    ViewBag.userCount = userClaim;
-        //    var delThumb = tm.GetbyId(id);
+        public IActionResult ThumbEdit(int id)
+        {
+            var userClaim = User.Identity.Name;
+            ViewBag.userCount = userClaim;
+            var delThumb = tm.GetbyId(id);
 
 
 
 
-        //    return View();
-        //}
+            return View(delThumb);
+        }
+        [HttpPost]
+        public IActionResult ThumbEdit(Thumb thumb)
+        {
+            var userClaim = User.Identity.Name;
+            ViewBag.userCount = userClaim;
+
+            var wenThumb = tm.GetbyId(thumb.ThumbId);
+            if (thumb.ThumbName != null)
+            {
+                wenThumb.ThumbName = thumb.ThumbName;
+            }
+            if (thumb.ThumbLastName != null)
+            {
+                wenThumb.ThumbLastName = thumb.ThumbLastName;
+            }
+            if (thumb.ThumbTag != null)
+            {
+                wenThumb.ThumbTag = thumb.ThumbTag;
+            }
+
+            if (thumb.ThumbBiography != null)
+            {
+                wenThumb.ThumbBiography = thumb.ThumbBiography;
+            }
+            if (thumb.Date != null)
+            {
+                wenThumb.Date = thumb.Date;
+            }
+            
+            if (thumb.ThumbClass != null)
+            {
+                wenThumb.ThumbClass = thumb.ThumbClass;
+            }
+           
+            
+            
+
+            if (wenThumb.UsersName != null)
+            {
+                tm.ThumbUpdate(wenThumb);
+                return RedirectToAction("BiographyEdit", "Admin");
+
+            }
+            else
+            {
+                return View();
+            }
+
+            
+        }
+
+
+
+
 
         public IActionResult Biography()
         {
@@ -126,6 +180,8 @@ namespace Why.Controllers
             ViewBag.userCount = userClaim;
             return View();
         }
+
+
         [HttpPost]
         public async Task<IActionResult> Biography(Biography b)
         {
@@ -168,8 +224,18 @@ namespace Why.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult BiographyEdit()
+        {
 
 
+            var userClaim = User.Identity.Name;
+            ViewBag.userCount = userClaim;
+
+
+
+            return View();
+        }
 
 
         [AllowAnonymous]
@@ -207,7 +273,7 @@ namespace Why.Controllers
             return View();
         }
 
-      
+
 
 
     }
