@@ -114,9 +114,6 @@ namespace Why.Controllers
             ViewBag.userCount = userClaim;
             var delThumb = tm.GetbyId(id);
 
-
-
-
             return View(delThumb);
         }
         [HttpPost]
@@ -147,18 +144,19 @@ namespace Why.Controllers
             {
                 wenThumb.Date = thumb.Date;
             }
-            
+
             if (thumb.ThumbClass != null)
             {
                 wenThumb.ThumbClass = thumb.ThumbClass;
             }
-           
-            
-            
+
+
+
 
             if (wenThumb.UsersName != null)
             {
                 tm.ThumbUpdate(wenThumb);
+                //thumbidyi gonder
                 return RedirectToAction("BiographyEdit", "Admin");
 
             }
@@ -167,7 +165,7 @@ namespace Why.Controllers
                 return View();
             }
 
-            
+
         }
 
 
@@ -225,19 +223,51 @@ namespace Why.Controllers
 
 
         [HttpGet]
-        public IActionResult BiographyEdit()
+        public IActionResult BiographyEdit(int id)
         {
 
 
             var userClaim = User.Identity.Name;
             ViewBag.userCount = userClaim;
+            foreach (var item in bm.GetList())
+            {
+                if (item.ThumbsId == id)
+                {
+                    var wenBio = item;
+                    return View(wenBio);
+                }
+            }
 
-
-
+            
             return View();
         }
 
+        [HttpPost]
+        public IActionResult BiographyEdit(Biography bio)
+        {
 
+            foreach (var item in bm.GetList())
+            {
+                if (item.ThumbsId == bio.ThumbsId)
+                {
+                    var wenBio = item;
+                    if (bio.BiographyContent != null)
+                    {
+                        wenBio.BiographyContent = bio.BiographyContent;
+                    }
+
+                    bm.BiographyUpdate(wenBio);
+                    return RedirectToAction("Index", "Admin");
+                }
+                
+            }
+
+
+            return View();
+
+
+
+        }
         [AllowAnonymous]
         public IActionResult Info(int id)
         {

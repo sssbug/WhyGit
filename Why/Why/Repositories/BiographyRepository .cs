@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using Why.Abstract;
 using Why.Data;
@@ -37,7 +38,9 @@ namespace Why.Repositories
 
         public void UpdateBiography(Biography biography)
         {
-            context.Update(biography);
+            context.Attach(biography);
+            context.Entry(biography).State = EntityState.Modified;
+            context.SaveChanges();
             context.SaveChanges();
         }
     }

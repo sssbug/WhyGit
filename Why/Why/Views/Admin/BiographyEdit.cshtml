@@ -1,4 +1,5 @@
-﻿
+﻿@using Why.Data.Models
+@model Biography
 @{
     ViewData["Title"] = "BiographyEdit";
     Layout = "~/Views/Shared/_Admin.cshtml";
@@ -6,3 +7,24 @@
 
 <h1>BiographyEdit</h1>
 
+<div style="border:1px #e8e8e8 solid;margin:0px 0px 10px 0px;">
+    
+    <form method="post">
+        
+        <div style="border-bottom:1px #e8e8e8 solid;
+					background-color:#f3f3f3;padding:8px;
+					font-size:13px;font-weight:700;color:#45484d;">
+            Biograpfy 
+        </div>
+        <div style="padding:8px;font-size:13px;" >
+            <textarea style="width:100%;" name="BiographyContent" >
+                @Model.BiographyContent
+            </textarea>
+        </div>
+        <div class="user-box">
+            <input class="btn btn-primary" type="submit" value="Save" name="submit">
+        </div>
+
+    </form>
+
+</div>
