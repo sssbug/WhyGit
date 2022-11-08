@@ -24,3 +24,16 @@ D:\GitHub\WhyGit\Why\Why.Data\obj\Debug\netcoreapp3.1\Why.Data.csproj.CoreCompil
 D:\GitHub\WhyGit\Why\Why.Data\obj\Debug\netcoreapp3.1\Why.Data.dll
 D:\GitHub\WhyGit\Why\Why.Data\obj\Debug\netcoreapp3.1\Why.Data.pdb
 D:\GitHub\WhyGit\Why\Why.Data\obj\Debug\netcoreapp3.1\Why.Data.genruntimeconfig.cache
+E:\GitHub\WhyGit\Why\Why.Data\bin\Debug\netcoreapp3.1\Why.Data.deps.json
+E:\GitHub\WhyGit\Why\Why.Data\bin\Debug\netcoreapp3.1\Why.Data.runtimeconfig.json
+E:\GitHub\WhyGit\Why\Why.Data\bin\Debug\netcoreapp3.1\Why.Data.runtimeconfig.dev.json
+E:\GitHub\WhyGit\Why\Why.Data\bin\Debug\netcoreapp3.1\Why.Data.dll
+E:\GitHub\WhyGit\Why\Why.Data\bin\Debug\netcoreapp3.1\Why.Data.pdb
+E:\GitHub\WhyGit\Why\Why.Data\obj\Debug\netcoreapp3.1\Why.Data.csproj.AssemblyReference.cache
+E:\GitHub\WhyGit\Why\Why.Data\obj\Debug\netcoreapp3.1\Why.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\GitHub\WhyGit\Why\Why.Data\obj\Debug\netcoreapp3.1\Why.Data.AssemblyInfoInputs.cache
+E:\GitHub\WhyGit\Why\Why.Data\obj\Debug\netcoreapp3.1\Why.Data.AssemblyInfo.cs
+E:\GitHub\WhyGit\Why\Why.Data\obj\Debug\netcoreapp3.1\Why.Data.csproj.CoreCompileInputs.cache
+E:\GitHub\WhyGit\Why\Why.Data\obj\Debug\netcoreapp3.1\Why.Data.dll
+E:\GitHub\WhyGit\Why\Why.Data\obj\Debug\netcoreapp3.1\Why.Data.pdb
+E:\GitHub\WhyGit\Why\Why.Data\obj\Debug\netcoreapp3.1\Why.Data.genruntimeconfig.cache

@@ -10,6 +10,7 @@ using Why.Data.Models;
 using Why.ModelsServices;
 using Why.Repositories;
 using Why;
+
 namespace Why.Controllers
 {
     public class AdminController : Controller
@@ -17,7 +18,6 @@ namespace Why.Controllers
         ThumbManager tm = new ThumbManager(new ThumbRepository());
         BiographyManager bm = new BiographyManager(new BiographyRepository());
         UserManager um = new UserManager(new UserRepository());
-
         Thumb thumbsId = new Thumb();
 
 
@@ -135,7 +135,6 @@ namespace Why.Controllers
             {
                 wenThumb.ThumbTag = thumb.ThumbTag;
             }
-
             if (thumb.ThumbBiography != null)
             {
                 wenThumb.ThumbBiography = thumb.ThumbBiography;
@@ -144,20 +143,17 @@ namespace Why.Controllers
             {
                 wenThumb.Date = thumb.Date;
             }
-
             if (thumb.ThumbClass != null)
             {
                 wenThumb.ThumbClass = thumb.ThumbClass;
             }
 
 
-
-
             if (wenThumb.UsersName != null)
             {
                 tm.ThumbUpdate(wenThumb);
-                //thumbidyi gonder
-                return RedirectToAction("BiographyEdit", "Admin");
+                var idd = wenThumb.ThumbId;
+                return RedirectToAction("BiographyEdit", "Admin", new { id = idd });
 
             }
             else
@@ -226,14 +222,16 @@ namespace Why.Controllers
         public IActionResult BiographyEdit(int id)
         {
 
-
+            
             var userClaim = User.Identity.Name;
             ViewBag.userCount = userClaim;
+
             foreach (var item in bm.GetList())
             {
                 if (item.ThumbsId == id)
                 {
                     var wenBio = item;
+                    
                     return View(wenBio);
                 }
             }
@@ -251,10 +249,9 @@ namespace Why.Controllers
                 if (item.ThumbsId == bio.ThumbsId)
                 {
                     var wenBio = item;
-                    if (bio.BiographyContent != null)
-                    {
-                        wenBio.BiographyContent = bio.BiographyContent;
-                    }
+                    
+                    wenBio.BiographyContent = bio.BiographyContent;
+                    
 
                     bm.BiographyUpdate(wenBio);
                     return RedirectToAction("Index", "Admin");

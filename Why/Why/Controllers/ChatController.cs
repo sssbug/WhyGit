@@ -86,9 +86,9 @@ namespace Why.Controllers
                     messageList.Add(item);
                 }
             }
-            var message = JsonConvert.SerializeObject(messageList);
             
-            return Json(message);
+            
+            return RedirectToAction("Index","Chat",new {messList = messageList});
         }
 
         
