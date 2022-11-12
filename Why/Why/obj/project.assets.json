@@ -8314,11 +8314,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\GitHub\\WhyGit\\Why\\Why\\Why.csproj",
+      "projectUniqueName": "D:\\GitHub\\WhyGit\\Why\\Why\\Why.csproj",
       "projectName": "Why",
-      "projectPath": "E:\\GitHub\\WhyGit\\Why\\Why\\Why.csproj",
+      "projectPath": "D:\\GitHub\\WhyGit\\Why\\Why\\Why.csproj",
       "packagesPath": "C:\\Users\\Windows\\.nuget\\packages\\",
-      "outputPath": "E:\\GitHub\\WhyGit\\Why\\Why\\obj\\",
+      "outputPath": "D:\\GitHub\\WhyGit\\Why\\Why\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8339,8 +8339,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\GitHub\\WhyGit\\Why\\Why.Data\\Why.Data.csproj": {
-              "projectPath": "E:\\GitHub\\WhyGit\\Why\\Why.Data\\Why.Data.csproj"
+            "D:\\GitHub\\WhyGit\\Why\\Why.Data\\Why.Data.csproj": {
+              "projectPath": "D:\\GitHub\\WhyGit\\Why\\Why.Data\\Why.Data.csproj"
             }
           }
         }
@@ -8406,7 +8406,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.305\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }

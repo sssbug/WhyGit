@@ -5009,11 +5009,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\GitHub\\WhyGit\\Why\\Why.Data\\Why.Data.csproj",
+      "projectUniqueName": "D:\\GitHub\\WhyGit\\Why\\Why.Data\\Why.Data.csproj",
       "projectName": "Why.Data",
-      "projectPath": "E:\\GitHub\\WhyGit\\Why\\Why.Data\\Why.Data.csproj",
+      "projectPath": "D:\\GitHub\\WhyGit\\Why\\Why.Data\\Why.Data.csproj",
       "packagesPath": "C:\\Users\\Windows\\.nuget\\packages\\",
-      "outputPath": "E:\\GitHub\\WhyGit\\Why\\Why.Data\\obj\\",
+      "outputPath": "D:\\GitHub\\WhyGit\\Why\\Why.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5082,7 +5082,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.305\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }
