@@ -20,7 +20,7 @@ namespace Why.Controllers
         UserManager um = new UserManager(new UserRepository());
         Thumb thumbsId = new Thumb();
 
-
+        
 
 
 

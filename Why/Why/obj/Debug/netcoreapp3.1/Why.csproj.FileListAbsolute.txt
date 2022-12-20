@@ -475,3 +475,8 @@ E:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Why.csproj.CopyComplete
 E:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Why.dll
 E:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Why.pdb
 E:\GitHub\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\Why.genruntimeconfig.cache
+D:\Github\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\staticwebassets\Why.StaticWebAssets.Pack.cache
+D:\Github\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.Why.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Github\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.Why.props
+D:\Github\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.Why.props
+D:\Github\WhyGit\Why\Why\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.Why.props

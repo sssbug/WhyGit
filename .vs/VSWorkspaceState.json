@@ -3,9 +3,10 @@
     "",
     "\\Why",
     "\\Why\\Why",
+    "\\Why\\Why\\Controllers",
     "\\Why\\Why\\Views",
     "\\Why\\Why\\Views\\Admin"
   ],
-  "SelectedNode": "\\Why\\Why\\Views\\Admin\\ThumbEdit.cshtml",
+  "SelectedNode": "\\Why\\Why\\Controllers\\AdminController.cs",
   "PreviewInSolutionExplorer": false
 }

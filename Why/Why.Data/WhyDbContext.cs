@@ -8,7 +8,7 @@ namespace Why.Data
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-AV3G4UK;database=WhyDb; integrated security=true;"); 
+            optionsBuilder.UseSqlServer("server=DESKTOP-635QQHF\\SQLEXPRESS;database=WhyDb; integrated security=true;"); 
         }
         //public WhyDbContext(DbContextOptions option) : base(option)
         //{

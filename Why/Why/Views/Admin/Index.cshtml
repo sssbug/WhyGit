@@ -9,7 +9,7 @@
 
 <div class="grid-base">
 
-    <div class="grid-container">
+    <div id="grid-container">
 
 
         @foreach (var item in Model)
@@ -82,6 +82,26 @@
     </div>
 
 </div>
+<script>
+    var tombCount = @Model.Count;
+    if (tombCount == 4) {
+        const collection = document.getElementById("grid-container").style["width"] = "100%";
 
+    }
+    else if (tombCount == 1) {
+        const collection = document.getElementById("grid-container").style["width"] = "40%";
+
+    }
+    else if (tombCount == 2) {
+        const collection = document.getElementById("grid-container").style["width"] = "50%";
+
+    }
+    else if (tombCount == 3) {
+        const collection = document.getElementById("grid-container").style["width"] = "80%";
+
+    }
+
+
+</script>
 
 

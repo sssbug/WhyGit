@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\WhyGit\\Why\\Why\\Why.csproj": {}
+    "D:\\Github\\WhyGit\\Why\\Why\\Why.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\WhyGit\\Why\\Why.Data\\Why.Data.csproj": {
+    "D:\\Github\\WhyGit\\Why\\Why.Data\\Why.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\WhyGit\\Why\\Why.Data\\Why.Data.csproj",
+        "projectUniqueName": "D:\\Github\\WhyGit\\Why\\Why.Data\\Why.Data.csproj",
         "projectName": "Why.Data",
-        "projectPath": "D:\\GitHub\\WhyGit\\Why\\Why.Data\\Why.Data.csproj",
-        "packagesPath": "C:\\Users\\Windows\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\WhyGit\\Why\\Why.Data\\obj\\",
+        "projectPath": "D:\\Github\\WhyGit\\Why\\Why.Data\\Why.Data.csproj",
+        "packagesPath": "C:\\Users\\Oktay\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\WhyGit\\Why\\Why.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Windows\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Oktay\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,7 +72,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -80,24 +82,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub\\WhyGit\\Why\\Why\\Why.csproj": {
+    "D:\\Github\\WhyGit\\Why\\Why\\Why.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\WhyGit\\Why\\Why\\Why.csproj",
+        "projectUniqueName": "D:\\Github\\WhyGit\\Why\\Why\\Why.csproj",
         "projectName": "Why",
-        "projectPath": "D:\\GitHub\\WhyGit\\Why\\Why\\Why.csproj",
-        "packagesPath": "C:\\Users\\Windows\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\WhyGit\\Why\\Why\\obj\\",
+        "projectPath": "D:\\Github\\WhyGit\\Why\\Why\\Why.csproj",
+        "packagesPath": "C:\\Users\\Oktay\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\WhyGit\\Why\\Why\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Windows\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Oktay\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -106,14 +108,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\GitHub\\WhyGit\\Why\\Why.Data\\Why.Data.csproj": {
-                "projectPath": "D:\\GitHub\\WhyGit\\Why\\Why.Data\\Why.Data.csproj"
+              "D:\\Github\\WhyGit\\Why\\Why.Data\\Why.Data.csproj": {
+                "projectPath": "D:\\Github\\WhyGit\\Why\\Why.Data\\Why.Data.csproj"
               }
             }
           }
@@ -167,7 +170,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -179,7 +183,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
