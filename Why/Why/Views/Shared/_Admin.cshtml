@@ -57,22 +57,36 @@
 				{
 					if (ViewBag.create == true)
 					{
-						<a title="Biography" asp-controller="Admin" asp-action="Market" asp-route-id=""><span> Create </span></a>
+						<a title="Biography" class="create" asp-controller="Admin" asp-action="Thumb" asp-route-id=""><span> Create </span></a>
 
 					}
 
 				}
-
-
 			</div>
 			<!--Menu-->
 
 
 		</div>
-		<div id="content-wrapper">
-			@RenderBody()
-		</div>
+		@if (ViewBag.userCount != null)
+		{
+			if (ViewBag.create == true)
+			{
+				<div id="content-wrapper" style="overflow-y:scroll; background-color: #cdcbbc; box-shadow: 4px 4px 5px 4px #52535a;">
 
+					@RenderBody()
+				</div>
+
+			}
+			else
+			{
+				<div id="content-wrapper" style="overflow-y:hidden;">
+
+					@RenderBody()
+				</div>
+			}
+
+		}
+		
 
 	</main>
 

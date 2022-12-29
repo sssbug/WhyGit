@@ -7,7 +7,7 @@ html, body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background: linear-gradient(0deg, rgba(255,252,232,1) 0%, rgba(218,216,202,1) 100%);
-    overflow:hidden;
+    overflow: hidden;
 }
 /* body	*/
 .container {
@@ -46,20 +46,17 @@ html, body {
 #content-wrapper {
     width: 87%;
     margin-left: 200px;
-    background-color: #cdcbbc;
-    box-shadow: 4px 4px 5px 4px #52535a;
     height: 85vh;
     padding: 15px;
-    overflow-y:scroll;
 }
 
 #responsive-admin-menu #responsive-menu {
     height: 50px;
-    display: none;
     line-height: 50px;
     cursor: pointer;
     color: #ffffff;
     text-indent: 10px;
+    display: none;
 }
 
 
@@ -144,7 +141,7 @@ html, body {
     position: relative;
 }
 
-    
+
 
     .user-box label {
         position: absolute;
@@ -152,7 +149,6 @@ html, body {
         left: 0;
         padding: 10px 0;
         font-size: 16px;
-        
         pointer-events: none;
         transition: .5s;
     }
@@ -260,14 +256,12 @@ html, body {
 .navbar {
     position: fixed;
     width: 100%;
-   
-    
-    
-    
 }
-main{
-    padding-top:10vh;
+
+main {
+    padding-top: 10vh;
 }
+
 .privacy {
     height: 5vh;
     width: 100%;
@@ -287,7 +281,25 @@ main{
     justify-content: center;
     align-items: center;
 }
+
 .login {
+    margin-right: 1rem;
+    position: relative;
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .2s;
+    border: solid;
+    box-shadow: 3px 4px 2px rgba(0,0,0,.6);
+    letter-spacing: 4px;
+    color: black;
+    background-color: white;
+}
+
+.next {
     margin-right: 1rem;
     position: relative;
     display: inline-block;
@@ -320,7 +332,7 @@ main{
     background-color: white;
 }
 
-.signup:hover {
+    .signup:hover {
         color: burlywood;
     }
 
@@ -329,7 +341,27 @@ main{
     box-shadow: 0px 0px 0px rgba(0,0,0,.6);
 }
 
+.create {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    background-color: aliceblue;
+    border: solid;
+    box-shadow: 3px 4px 2px rgba(0,0,0,.6);
+    left: 40px;
+    letter-spacing: 4px;
+    color: black;
+}
 
+.login-box .create:hover {
+    box-shadow: 0px 0px 0px rgba(0,0,0,.6);
+    color: burlywood;
+}
 
 .iconn {
     width: 30px;
@@ -352,7 +384,7 @@ main{
     background-color: oldlace;
 }
 
-.choseButton:hover {
+    .choseButton:hover {
         box-shadow: 0px 0px 0px rgba(0,0,0,.6);
         color: burlywood;
     }
@@ -360,4 +392,161 @@ main{
 
 .nav-item-chose {
     padding-left: 10px;
+}
+
+
+
+h2 {
+    border: solid;
+    box-shadow: 3px 4px 2px rgba(0,0,0,.6);
+}
+
+.title {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    border: solid;
+    box-shadow: 3px 4px 2px rgba(0,0,0,.6);
+}
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30rem;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 5px 5px 2px rgba(0,0,0,.6);
+}
+
+    .login-box h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+    }
+
+    .login-box .user-box {
+        position: relative;
+    }
+
+        .login-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+
+        .login-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .login-box .user-box input:focus ~ label,
+        .login-box .user-box input:valid ~ label {
+            top: -20px;
+            left: 0;
+            color: #03e9f4;
+            font-size: 12px;
+        }
+
+.chosen {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(130px,1fr));
+    grid-gap: 1rem;
+    padding-bottom: 50px;
+}
+
+.chosen label {
+    color: white;
+    margin-left: 0px;
+    padding-left: 0px;
+    border: solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.375em;
+}
+
+
+
+
+
+.chosen label input {
+    position: absolute;
+    left: -9999px;
+}
+
+.chosen label input:checked + span {
+    background-color:darkgrey;
+}
+
+.chosen label input:checked + span:before {
+    box-shadow: inset 0 0 0 0.4375em rgba(0,0,0,.6);
+}
+
+.chosen label span {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 0.375em 0.75em 0.375em 0.375em;
+    width:100%;
+    transition: 0.25s ease;
+}
+
+.chosen label span:hover {
+    background-color:darkgray;
+}
+
+    .chosen label span:before {
+        display: flex;
+        flex-shrink: 0;
+        content: "";
+        background-color: #fff;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+        margin-right: 0.375em;
+        transition: 0.25s ease;
+        box-shadow: inset 0 0 0 0.125em #52535a;
+    }
+.save {
+    margin-left:8px;
+    
+    position: relative;
+    display: inline-block;
+    padding: 6px 10px;
+
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .2s;
+    border: solid;
+    box-shadow: 3px 4px 2px rgba(0,0,0,.6);
+    letter-spacing: 4px;
+    color: black;
+    background-color: white;
+}
+.save-box{
+    padding-bottom:10px;
 }

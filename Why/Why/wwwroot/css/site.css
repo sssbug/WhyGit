@@ -26,7 +26,6 @@ body {
     margin-bottom: 60px;
     min-height: 100vh;
     background: linear-gradient(0deg, rgba(255,252,232,1) 0%, rgba(218,216,202,1) 100%);
-    overflow: hidden;
 }
 
 .container {
@@ -58,8 +57,10 @@ body {
 .profil {
     width: 10vh;
     height: 10vh;
-    top: 7vh;
-    position: fixed;
+    position:fixed;
+    right:0;
+    bottom:0;
+    
 }
 
 .navbar-brand {
@@ -412,3 +413,4 @@ body {
 .nav-item-chose {
     padding-left: 10px;
 }
+

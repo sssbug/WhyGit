@@ -3,11 +3,16 @@
     ViewData["Title"] = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    body{
+        overflow:hidden;
+    }
+</style>
 
-<div class="biografi">
+<div class="biografi" style="overflow-y:scroll">
     <div class="profil">
 
-        <a class="" asp-controller="Admin" asp-action="Info" asp-route-id="@ViewBag.thumbId">@ViewBag.userName</a>
+        <a class="login infobutton" asp-controller="Admin" asp-action="Info" asp-route-id="@ViewBag.thumbId">@ViewBag.userName</a>
 
     </div>
     <div class="container">
